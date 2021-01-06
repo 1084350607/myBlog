@@ -1,0 +1,51 @@
+import React, { useEffect } from 'react';
+import {
+    SecWrapper,
+    Title,
+    BlogItemList
+} from './style'
+import { TextLine } from '../BlogFir/style';
+import BlogItem from '../BlogItem'
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import clsx from 'clsx'
+
+
+
+function BlogSec(props){
+    const {
+        title='Article',
+    } = props
+
+    //获取博客自定义配置项
+    const { siteConfig } = useDocusaurusContext();
+    const { customFields } = siteConfig;
+
+    //渲染的博客数量
+    const BlogCounter = [...new Array(customFields.BlogNumber).keys()];
+
+    return (
+        <SecWrapper>
+            {/*<div data-aos="fade-zoom-in"
+                data-aos-easing="ease-in-back"
+                data-aos-delay="300"
+                data-aos-offset="0"
+                data-aos-duration='1000'
+            ></div>*/}
+            <Title>{title}</Title><TextLine width='12rem'/>
+            
+            <BlogItemList>
+                {BlogCounter.map((item) => {
+                    const src = `../../../static/img/${item + 3}.jpg`;
+                    return (
+                    <BlogItem 
+                        props={item + 1}  
+                        key={item*2} 
+                        bgimage={src}
+                    />)
+                })}
+            </BlogItemList>
+        </SecWrapper>
+    )
+}
+
+export default BlogSec
