@@ -25,18 +25,22 @@ module.exports = {
           items: [
             {
               label: "Javascript",
-              to: "/blog/tags/前端",
+              to: "/blog/tags/Javascript",
+            },
+            {
+              label: "Typescript",
+              to: "/blog/tags/typescript",
             }
           ],
         },
         {
-          to: 'docs/algorithm/二叉树/preorder', 
-          label: '算法', 
+          to: 'docs/algorithm/二叉树/preorder',
+          label: '算法',
           position: 'right',
         },
         {
-          to: 'docs/resources/resources-intro', 
-          label: '资源整理', 
+          to: 'docs/resources/resources-intro',
+          label: '资源整理',
           position: 'right',
         },
         {
@@ -90,7 +94,7 @@ module.exports = {
       <a style='text-decoration:none' href='http://beian.miit.gov.cn'><p style='color:white'>冀ICP备2020030963号-1</p></a>`,
     },
   },
-  
+
   presets: [
     [
       '@docusaurus/preset-classic',
