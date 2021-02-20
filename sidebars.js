@@ -16,11 +16,11 @@ module.exports = {
       'algorithm/手写函数/extends',
       'algorithm/手写函数/lazyload',
       'algorithm/手写函数/unique',
+      'algorithm/手写函数/assign',
       'algorithm/手写函数/lru',
       'algorithm/手写函数/promise',
-      'algorithm/手写函数/ajax',     
-      'algorithm/手写函数/instanceof', 
-      
+      'algorithm/手写函数/ajax',
+      'algorithm/手写函数/instanceof',
     ]
   },
 };

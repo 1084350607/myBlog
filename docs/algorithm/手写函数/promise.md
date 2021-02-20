@@ -422,8 +422,46 @@ let promise = new MyPromise((resolve, reject) => {
 )                                                               //0 1 2 ttt
 ```
 
+## Promise方法的实现
+### Promise.all()
+```js
+function MyPromiseAll (promises) {
+  // 检测目标是不是iterator类型
+  let isIterator = (target) => {
+    return target && typeof target[Symbol.iterator] === 'function'
+  }
+  return new Promise((resolve, reject) => {
+    // 保存结果的数组
+    let result = []
+    // 已经遍历的promise数量
+    let count = 0
+    // 缓存一次promises的长度,后面不用每次使用都查询
+    let len = promises.length
+    // 因为理论上promises应该为iterator,所以不能用length去判断
+    if (!isIterator(promises)) {
+      resolve(result)
+    } else {
+      // 遍历整个promises，注意应该使用for of 去操作iterator类型
+      for (const promise of promises) {
+        // 使用Promise.resolve将普通值类型封装为Promise类型(简便)
+        Promise.resolve(promise).then(val => {
+          result.push(val)
+          count++
+          // 当遍历结束后将结果resolve出去
+          if (count === len) {
+            resolve(result)
+          }
+        }, reason => {
+          // 遇到reject后直接抛出第一个错误
+          reject(reason)
+        })
+      }
+    }
+  })
+}
+```
 
-## 完整代码
+## 基础版本完整代码
 ```js
 class MyPromise{
     constructor(executor){
@@ -516,3 +554,4 @@ const reslovePromise = (promise2, x, resolve, reject) => {
     }
 }
 ```
+

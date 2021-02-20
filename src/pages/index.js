@@ -1,14 +1,9 @@
 import React from 'react';
-import clsx from 'clsx';
 import Layout from '@theme/Layout';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css'
-import { useSpring,animated , useTrail } from 'react-spring'
- 
-function Home() {
+import { useSpring,animated } from 'react-spring'
 
+function Home() {
   const props = useSpring({
     opacity: 1,transform: "translateY(0)",
     from: {opacity: 0, transform: "translateY(3em)"},
@@ -32,9 +27,9 @@ function Home() {
       <div className={styles.index_wrapper}>
         <animated.h1 style={props}>Welcome to <span className={styles.fontActive}>JiuRan's Channel</span></animated.h1>
         <animated.p style={props2}>Make things as simple as possible but no simpler.</animated.p>
-        <animated.a 
-          href='/docs/algorithm/二叉树/preorder' 
-          className={styles.blogHome_btn} 
+        <animated.a
+          href='/docs/algorithm/二叉树/preorder'
+          className={styles.blogHome_btn}
           style={props3}
         >Get Started</animated.a>
       </div>
