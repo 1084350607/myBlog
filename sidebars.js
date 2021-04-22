@@ -23,4 +23,19 @@ module.exports = {
       'algorithm/手写函数/instanceof',
     ]
   },
+  react: {
+    React: [
+      'react/react-hooks',
+      'react/react-props-drilling',
+      'react/react-mental-modal',
+      'react/react-performance-optimization',
+      'react/react-reuseability'
+    ],
+    Redux: [
+      'redux/redux-hoc'
+    ],
+    ReactRouter: [
+      'react-router/react-router-v6'
+    ]
+  }
 };

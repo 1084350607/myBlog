@@ -39,6 +39,11 @@ module.exports = {
           position: 'right',
         },
         {
+          to: 'docs/react/react-hooks',
+          label: 'React源码',
+          position: 'right',
+        },
+        {
           to: 'docs/resources/resources-intro',
           label: '资源整理',
           position: 'right',
