@@ -57,6 +57,7 @@ function BlogPostItem(props) {
   const imageUrl = useBaseUrl(image, {absolute: true});
 
   // 是否为黑暗主题：
+  // TODO: 修改黑暗主题样式
   const theme = useContext(ThemeContext);
   const { isDarkTheme } = theme;
 

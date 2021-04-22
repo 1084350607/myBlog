@@ -26,10 +26,6 @@ module.exports = {
             {
               label: "Javascript",
               to: "/blog/tags/Javascript",
-            },
-            {
-              label: "Typescript",
-              to: "/blog/tags/typescript",
             }
           ],
         },
